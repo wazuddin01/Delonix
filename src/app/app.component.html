@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to Delonix
+  </h1>
+
+  <div class="container">
+
+    <!-- Form to createPost -->
+    <form #form="ngForm" (ngSubmit)="createPost(form)">
+      <h2>Create Post</h2>
+      <div class="form-group">
+        <input type="text" ngModel name="body" #body="ngModel" class="form-control">
+      </div>
+      <input class="btn btn-success" type="submit">
+    </form>
+
+    <div *ngFor="let post of Posts">
+      <div class="card">
+        <div class="card-body">
+          <p>{{post.body}}</p>
+        </div>
+        <button (click)="deletePost(post)" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
